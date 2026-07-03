@@ -1,0 +1,106 @@
+/* =============================================
+   CalendarDay Component
+   ============================================= */
+
+.calendar-day {
+  position: relative; /* anchor for the ::after tick indicator */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  max-width: 60px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.calendar-day:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* ── Today modifier ─────────────────────────── */
+
+.calendar-day--today {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.calendar-day--today:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+/* ── Checked modifier — Design B (indicator tick) ── */
+/*
+   Design A (full green fill) is preserved below as a comment.
+   To switch back, comment out Design B and uncomment Design A.
+*/
+
+/* -- Design B: dark background + green tick in top-right corner -- */
+.calendar-day--checked {
+  border-color: #22c55e;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* The ✓ tick rendered via ::after */
+.calendar-day--checked::after {
+  content: '✓';
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  font-size: 0.45rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #22c55e;
+  transition: color var(--transition-fast);
+}
+
+.calendar-day--checked:hover {
+  background-color: var(--color-surface-alt);
+  border-color: #16a34a;
+  color: var(--color-text);
+}
+
+.calendar-day--checked:hover::after {
+  color: #16a34a;
+}
+
+/*
+-- Design A: full green fill (original) --
+
+.calendar-day--checked {
+  background-color: #22c55e;
+  border-color: #22c55e;
+  color: #ffffff;
+}
+
+.calendar-day--checked:hover {
+  background-color: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+}
+*/
+
+/* ── Empty cell ─────────────────────────────── */
+
+.calendar-day--empty {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: default;
+  pointer-events: none;
+}

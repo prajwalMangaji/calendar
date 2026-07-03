@@ -1,0 +1,74 @@
+/* =============================================
+   Calendar Component
+   ============================================= */
+
+.calendar {
+  width: 100%;
+  max-width: 740px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Navigation bar: ◀ Month Year ▶ */
+.calendar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.calendar__nav-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: 0.65rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.calendar__nav-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-primary);
+  background-color: var(--color-surface-alt);
+}
+
+/* Month + Year heading */
+.calendar__heading {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* 7-column grid shared by weekday headers and day cells */
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.45rem;
+}
+
+/* Weekday header labels */
+.calendar__weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}

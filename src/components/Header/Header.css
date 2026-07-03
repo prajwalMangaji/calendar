@@ -1,0 +1,21 @@
+/* =============================================
+   Header Component
+   ============================================= */
+
+.header {
+  width: 100%;
+  padding: 0.875rem 2rem;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-primary-light);
+  text-transform: uppercase;
+}
